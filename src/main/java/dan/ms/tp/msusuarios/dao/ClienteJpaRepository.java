@@ -3,7 +3,10 @@ package dan.ms.tp.msusuarios.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import dan.ms.tp.msusuarios.modelo.Cliente;
+import java.util.List;
 
-public interface ClienteJpaRepository extends JpaRepository<Cliente,Integer> {
-    
+public interface ClienteJpaRepository extends JpaRepository<Cliente,Integer> 
+{
+    //Busqueda por firma: find + ByCuit
+    public List<Cliente> findByCuit(String cuit);
 }

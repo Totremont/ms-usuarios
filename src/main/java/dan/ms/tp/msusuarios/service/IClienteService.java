@@ -15,10 +15,10 @@ import java.util.Optional;
  */
 public interface IClienteService 
 {
-    public int insert(Cliente cliente) throws EntityDuplicatedException;;
+    public Cliente insert(Cliente cliente) throws EntityDuplicatedException;;
     public void delete(int id) throws EntityNotFoundException;
     public void update(Cliente cliente) throws EntityNotFoundException;
-    public Optional<Cliente> getById(int id);
-    public Optional<Cliente> getByCuit(String cuit);
+    public Optional<Cliente> findById(int id);
+    public Optional<Cliente> findByCuit(String cuit);
     
 }

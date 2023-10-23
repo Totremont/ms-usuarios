@@ -35,8 +35,7 @@ public class ClienteController
     {
         try
         {
-            int id = service.insert(cliente);
-            return ResponseEntity.ok(id);
+            return ResponseEntity.ok(service.insert(cliente));
             
         } catch(EntityDuplicatedException e)
         {
@@ -75,13 +74,13 @@ public class ClienteController
     @GetMapping(path = "/{id}")
     public ResponseEntity getById(@PathVariable int id)
     {
-        return ResponseEntity.of(service.getById(id));
+        return ResponseEntity.of(service.findById(id));
     }
     
     @GetMapping(path = "/{cuit}")
     public ResponseEntity getByCuit(@PathVariable String cuit)
     {
-        return ResponseEntity.of(service.getByCuit(cuit));
+        return ResponseEntity.of(service.findByCuit(cuit));
     }
     
 }

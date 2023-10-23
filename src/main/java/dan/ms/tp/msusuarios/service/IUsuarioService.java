@@ -17,11 +17,11 @@ import java.util.Optional;
  */
 public interface IUsuarioService 
 {
-    public int insert(Usuario usuario) throws EntityDuplicatedException;
+    public Usuario insert(Usuario usuario) throws EntityDuplicatedException;
     public void delete(int id) throws EntityNotFoundException;
     public void update(Usuario usuario) throws EntityNotFoundException;
-    public Optional<Usuario> getById(int id);
-    public Optional<List<Usuario>> getByClient(Cliente cliente);
-    public Optional<List<Usuario>> getByTipo(String tipo);
+    public Optional<Usuario> findById(int id);
+    public Optional<List<Usuario>> findByCliente(Cliente cliente);
+    public Optional<List<Usuario>> findByTipoUsuario(String tipo);
     
 }

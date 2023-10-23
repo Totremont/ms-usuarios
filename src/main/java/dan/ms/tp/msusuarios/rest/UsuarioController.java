@@ -35,8 +35,7 @@ public class UsuarioController
     {
         try
         {
-            int id = service.insert(usuario);
-            return ResponseEntity.ok(id);
+            return ResponseEntity.ok(service.insert(usuario));
             
         } catch(EntityDuplicatedException e)
         {
@@ -75,7 +74,7 @@ public class UsuarioController
     @GetMapping(path = "/{id}")
     public ResponseEntity getById(@PathVariable int id)
     {
-        return ResponseEntity.of(service.getById(id));
+        return ResponseEntity.of(service.findById(id));
     }
     
 }
