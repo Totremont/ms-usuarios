@@ -13,4 +13,11 @@ public class TipoUsuario {
     @Id
     private Integer id;
     private String tipo;
+    
+    public TipoUsuario(String tipo)
+    {
+        this.tipo = tipo;
+    }
+    
+    public TipoUsuario(){};
 }

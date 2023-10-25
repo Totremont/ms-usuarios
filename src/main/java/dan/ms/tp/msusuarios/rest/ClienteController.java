@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ezequ
  */
 @RestController
-@RequestMapping("api/clientes")
+@RequestMapping("api/cliente")
 public class ClienteController 
 {
     @Autowired

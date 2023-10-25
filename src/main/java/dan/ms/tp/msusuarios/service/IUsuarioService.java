@@ -6,7 +6,6 @@ package dan.ms.tp.msusuarios.service;
 
 import dan.ms.tp.msusuarios.exception.EntityDuplicatedException;
 import dan.ms.tp.msusuarios.exception.EntityNotFoundException;
-import dan.ms.tp.msusuarios.modelo.Cliente;
 import dan.ms.tp.msusuarios.modelo.Usuario;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +20,7 @@ public interface IUsuarioService
     public void delete(int id) throws EntityNotFoundException;
     public void update(Usuario usuario) throws EntityNotFoundException;
     public Optional<Usuario> findById(int id);
-    public Optional<List<Usuario>> findByCliente(Cliente cliente);
+    public Optional<List<Usuario>> findByCliente(int clienteId);
     public Optional<List<Usuario>> findByTipoUsuario(String tipo);
     
 }

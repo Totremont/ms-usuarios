@@ -21,6 +21,7 @@ public class UsuarioService implements IUsuarioService
 {
 
     @Autowired private UsuarioJpaRepository repo;
+    @Autowired private IClienteService clienteService;
     
     @Override
     public Usuario insert(Usuario usuario) throws EntityDuplicatedException 
@@ -52,10 +53,14 @@ public class UsuarioService implements IUsuarioService
     }
 
     @Override
-    public Optional<List<Usuario>> findByCliente(Cliente cliente) {
-        List<Usuario> lista = repo.findByCliente(cliente);
-        if(lista.isEmpty()) return Optional.empty();
-        else return Optional.of(lista);
+    public Optional<List<Usuario>> findByCliente(int clientId) 
+    {
+        Optional<Cliente> cliente = clienteService.findById(clientId);
+        if(cliente.isPresent())
+        {
+            List<Usuario> lista = repo.findByCliente(cliente.get());
+            return Optional.of(lista);
+        } else return Optional.empty();
     }
 
     @Override

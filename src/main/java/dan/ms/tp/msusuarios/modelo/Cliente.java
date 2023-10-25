@@ -30,4 +30,16 @@ public class Cliente {
 
     @Column(name = "HABILITADO_ONLINE")
     private Boolean habilitadoOnline;
+    
+    public Cliente(String razonSocial, String cuit, String correoElectronico, Double maximoCuentaCorriente, Boolean habilitadoOnline)
+    {
+        this.razonSocial = razonSocial;
+        this.cuit = cuit;
+        this.correoElectronico = correoElectronico;
+        this.maximoCuentaCorriente = maximoCuentaCorriente;
+        this.habilitadoOnline = habilitadoOnline;
+    }
+    
+    //Constructor por defecto, necesario para Hibernate
+    public Cliente(){};
 }

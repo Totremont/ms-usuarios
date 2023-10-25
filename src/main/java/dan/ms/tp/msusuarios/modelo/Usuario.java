@@ -29,5 +29,15 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "ID_TIPO_USUARIO")
     private TipoUsuario tipoUsuario;
+
+    public Usuario(String userName, String password, String correoElectronico) {
+        this.userName = userName;
+        this.password = password;
+        this.correoElectronico = correoElectronico;
+    }
+    
+    public Usuario(){};
+    
+    
     
 }
